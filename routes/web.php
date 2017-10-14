@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//基礎路由參數
+Route::get('student/{student_no}',function($student_no){
+    return "學號：".$student_no;
+});
+Route::get('student/{srudent_no}/score',function($student_no){
+    return "學號：".$student_no."的所有成績";
+});
