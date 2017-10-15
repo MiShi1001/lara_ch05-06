@@ -27,4 +27,6 @@ Route::get('{student_no}/score/{subject?}',[
 ])->where(['subject'=>'(chinese│english│math)']);
 });
 //cool路由
-Route::get('cool','Cool\TestController@index');
+Route::group(['namespace'=>'Cool'],function (){
+    Route::get('cool','Cool\TestController@index');
+});
