@@ -19,14 +19,10 @@ Route::group(['prefix'=>'student'],function(){
 
     Route::get('{student_no}',[
         'as'=>'student',
-        'use'=>function($student_no){
-        return "學號：".$student_no;
-    }
+        'use'=>'StudentController@getStudentData'
     ]);
 Route::get('{student_no}/score/{subject?}',[
     'as'=>'student.score',
-    'use'=>function($student_no,$subject=null){
-    return "學號：".$student_no."的".(is_null($subject))?"所有科目":$subject."成績";
-}
+    'use'=>'StudentController@getStudentScore'
 ])->where(['subject'=>'(chinese│english│math)']);
 });
