@@ -26,3 +26,5 @@ Route::get('{student_no}/score/{subject?}',[
     'use'=>'StudentController@getStudentScore'
 ])->where(['subject'=>'(chinese│english│math)']);
 });
+//cool路由
+Route::get('cool','Cool\TestController@index');
